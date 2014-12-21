@@ -24,9 +24,11 @@ url:
 <q>
 ```{r myinterface, cache=FALSE, echo=FALSE}
 library(ggplot2)
-pophealth2 <- readRDS("peopleImpact.rds")
-g <- ggplot(popHealth2, aes(type, count / 1000, fill=Impact)) + geom_bar(stat="identity")
-g <- g + labs(x = "Type of Event", y = "# People Affected (1,000)", title = "Total Injuries & Fatalities by Weather Category 1950 - 2011")
+econImpact <- readRDS("econImpact.rds")
+g <- ggplot(econImpact, aes(BGN_DATE, value / 10^9, fill=Type)) + geom_bar(stat="identity")
+g <- g + facet_grid(Impact ~ ., scales = "free_y") 
+g <- g + labs(x = "Year", y = "Total $ Cost (Billions)", title = "Property & Crop damage by Year")
+g <- g + coord_cartesian(xlim = c(1990, 2011))
 print(g)
 ```
 </q>
