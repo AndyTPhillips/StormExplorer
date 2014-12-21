@@ -10,7 +10,7 @@ github:
 twitter:
   text: "Presentation for Coursera Data Products Project"
 url:
-  lib: ../../libraries
+  lib: libraries
 --- .slide x:-1000 y:-1500
 
 <q>Storms and other **severe** events can result in fatalities, injuries, and property damage.</q>
